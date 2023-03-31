@@ -4,7 +4,7 @@ import { updateEmail, updateProfile } from "firebase/auth";
 import Head from "next/head";
 import { useForm, SubmitHandler } from "react-hook-form";
 import toast from "react-hot-toast";
-import { auth, db } from "../../firebase";
+import { auth } from "../../firebase";
 import useAuth from "../hooks/useAuth";
 
 interface Inputs {

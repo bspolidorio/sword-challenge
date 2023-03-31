@@ -1,25 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Thumbnail from "../Thumbnail";
 import useAuth from "@/hooks/useAuth";
-import {
-  onSnapshot,
-  collection,
-  DocumentData,
-  deleteDoc,
-  doc,
-  setDoc,
-} from "firebase/firestore";
-import { db } from "../../../firebase";
-import toast from "react-hot-toast";
 import { Repo } from "../../../@types/types";
-import { toasterStyles } from "@/styles/toaster";
-import SortDropdown from "../SortDropdown";
-import useGetRepos from "@/hooks/useGetRepos";
 import useBookmarks from "@/hooks/useBookmarks";
 
 const BookmarksRow = () => {
-  const { user } = useAuth();
   const { bookmarks, deleteBookmark, setBookmark } = useBookmarks();
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
