@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Thumbnail from "../Thumbnail";
-import useAuth from "@/hooks/useAuth";
 import { Repo } from "../../../@types/types";
 import useBookmarks from "@/hooks/useBookmarks";
 
@@ -35,7 +34,7 @@ const BookmarksRow = () => {
     setBookmark(repo);
   };
 
-  if (!bookmarks) return null;
+  if (!bookmarks || (bookmarks && bookmarks.length === 0)) return null;
 
   return (
     <div className="relative">
